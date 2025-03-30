@@ -1,6 +1,6 @@
-# Template for Slides + Remark
+# DataFrame output API in scikit-learn
 
-[Link to slides](https://thomasjpfan.github.io/slides-template/)
+[Link to slides](https://thomasjpfan.github.io/sklearn-set-output/)
 
 ## License
 
