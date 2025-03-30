@@ -19,7 +19,7 @@ class: title-slide
 
 ---
 
-# DataFrame output API
+# DataFrame Output API 💻
 
 .g[
 .g-6[
@@ -44,7 +44,7 @@ scalar.fit_transform(X)
 
 ---
 
-# DataFrame output API 💻
+# DataFrame Output API 💻
 
 .g[
 .g-6[
@@ -78,7 +78,7 @@ scalar.transform(X)
 
 ---
 
-# API design Journey 🛣️
+# API Design Journey 🛣️
 
 1. Input Validation with `feature_names_in_`
 2. `get_feature_names_out`
@@ -102,7 +102,7 @@ print(scalar.feature_names_in_)
 ```python
 X2 = pd.DataFrame({"lat": [1, 2], "long": [-2, -4]})
 try:
-    scalar.transform(X2)
+*   scalar.transform(X2)
 except ValueError as e:
     print(e)
 ```
@@ -162,9 +162,9 @@ print(pca.get_feature_names_out())
 
 # Three API Options for DataFrame out 🧪
 
-1. DataFrame in & DataFrame out [Rejected SLEP014](https://scikit-learn-enhancement-proposals.readthedocs.io/en/latest/slep014/proposal.html)
+1. DataFrame in & DataFrame out: [Rejected SLEP014](https://scikit-learn-enhancement-proposals.readthedocs.io/en/latest/slep014/proposal.html)
 2. Custom `InputArray`: [Rejected SLEP012](https://scikit-learn-enhancement-proposals.readthedocs.io/en/latest/slep012/proposal.html)
-3. `set_output` API [Accepted SLEP018](https://scikit-learn-enhancement-proposals.readthedocs.io/en/latest/slep018/proposal.html)
+3. `set_output` API: [Accepted SLEP018](https://scikit-learn-enhancement-proposals.readthedocs.io/en/latest/slep018/proposal.html)
 
 ---
 
@@ -258,7 +258,7 @@ X_out_df = scalar.fit_transform(X_df)
 ### Polars output
 
 ```python
-*scalar.set_output(transform="polars")
+*sklearn.set_config(transform_output="polars")
 
 X_out_df = scalar.transform(X)
 type(X_out_df)
@@ -270,7 +270,7 @@ type(X_out_df)
 class: top
 <br><br>
 
-# `set_output` Feature 🔮
+# `set_output` Future 🔮
 
 ## Predict output
 
@@ -291,5 +291,5 @@ scalar.set_output(transform="xarray")
 ## Custom data containers
 
 ```python
-sklearn.register_output(CustomDFLibAdapter())
+sklearn.register_output(CustomDataFrameAdapter())
 ```
